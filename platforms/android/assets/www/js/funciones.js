@@ -656,7 +656,7 @@ function getImage() {
             var params = new Object();
             params.names = nomFile;
             params.value2 = "param";
-						alert("paso");
+						
             options.params = params;
             options.chunkedMode = false;
 

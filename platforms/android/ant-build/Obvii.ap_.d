@@ -39,7 +39,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index_ejem.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\libre.html \
@@ -50,6 +49,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\sesion.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\spec \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\spec.html \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\splash.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\terminos.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\terminos.pdf \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\view.html \
@@ -228,7 +228,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\ticket
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\logo.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_api_mobile_basica.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd_old.js \
@@ -316,6 +315,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\ba
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\bada-wac \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\blackberry \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\ios \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\splash.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\tizen \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\webos \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\windows-phone \
