@@ -667,7 +667,7 @@ function getImage() {
             //console.log("Code = " + r.responseCode);
             //console.log("Response = " + r.response);
             //console.log("Sent = " + r.bytesSent);
-            mensaje("Imagen almacenada",'MENSAJE','myPopup');
+            //mensaje("Imagen almacenada",'MENSAJE','myPopup');
         }
 
         function fail(error) {

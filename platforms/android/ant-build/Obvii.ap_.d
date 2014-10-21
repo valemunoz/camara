@@ -30,6 +30,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\ant-build\res\drawable-x
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\_where-is-www.txt \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\config.xml \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\config.xml.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\cordova.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\cordova_plugins.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css \
@@ -305,6 +306,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\ios\
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\ios\icon-57.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\ios\icon-72-2x.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\ios\icon-72.png \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\ios\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\tizen\icon-128.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\webos\icon-64.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\icon\windows-phone\icon-173-tile.png \
@@ -327,6 +329,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\an
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\android\screen-mdpi-portrait.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\android\screen-xhdpi-landscape.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\android\screen-xhdpi-portrait.png \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\android\splash.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\bada\screen-portrait.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\bada-wac\screen-type3.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res\screen\bada-wac\screen-type4.png \

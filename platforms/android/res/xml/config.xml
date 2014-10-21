@@ -43,6 +43,8 @@
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreen" value="splash" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
@@ -64,5 +66,7 @@
     <feature name="org.apache.cordova.FileTransfer" />
     <feature name="org.apache.cordova.file" />
     <icon src="icon.png" />
+    <icon density="mdpi" height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
+    <splash src="splash.png" />
     <access origin="*" />
 </widget>
