@@ -661,7 +661,7 @@ function getImage() {
             options.chunkedMode = false;
 
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://locate.chilemap.cl/obvii/includes/uploadb.php", win, fail, options);
+            ft.upload(imageURI, "http://locate.chilemap.cl/obvii/includes/uploadb.php", win, fail, options,true);
 				}
         function win(r) {
             //console.log("Code = " + r.responseCode);
@@ -685,8 +685,9 @@ function marcarLugar(id_lugar,comenta)
 		
 		//$.mobile.changePage('#m_checkout2',  {transition: 'pop', role: 'dialog'});
 		//cambiar("m_checkout2");
-		$.mobile.changePage('#m_checkout2', { role: 'dialog'});
+		//$.mobile.changePage('#m_checkout2', { role: 'dialog'});
 		$("#myPopup").popup("close");
+		loadCheckout(id_lugar)
  			
 
 
@@ -741,6 +742,72 @@ function marcarLugar(id_lugar,comenta)
 	mensaje(MSG_NO_GPS,'ERROR','myPopup');
 	
 }
+function marcarLugarComDoc()
+{
+	
+	id_lugar=$("#t_id_empresa").html();
+	
+	$("#myPopup").popup("close");
+	$.mobile.loading( 'hide');
+			$.mobile.loading( 'show', {
+				text: 'Obteniendo Ubicacion...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+			//checkInternet(4);
+			
+		navigator.geolocation.getCurrentPosition (function (pos)
+		{
+			var lat = pos.coords.latitude;
+  		var lng = pos.coords.longitude;
+  		var accu=pos.coords.accuracy.toFixed(2);
+  		
+  		OBVII_LON=lng;
+  		OBVII_LAT=lat;
+  		OBVII_ACCU=accu;
+  		
+  	  
+			$.mobile.loading( 'hide');
+		
+			var coment=$.trim(document.getElementById("comentario_lug").value);
+			
+			$("#m_checkout2").dialog( "close" );
+			
+			
+			
+			$.mobile.loading( 'show', {
+				text: 'Marcando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+			var fileImagen="";
+			fot=document.getElementById("camera_image").src;
+			if(fot.search("index.html")> 1)
+			{
+				fot="";
+			}
+			if(fot !="")
+			{
+				d = new Date();
+				fec=''+d.getFullYear()+''+d.getMonth()+''+d.getDate()+''+d.getHours()+''+d.getMinutes()+''+d.getSeconds()+'';
+				fileImagen=id_lugar+"_"+fec+".jpg";
+				//alert("nom_imagen:: "+fileImagen);
+				uploadPhoteServer(fileImagen);
+			}
+			$("#output").load(path_query, 
+			{tipo:8, id:id_lugar,coment:coment,lat:OBVII_LAT,lon:OBVII_LON,accu:OBVII_ACCU,tipo_marca:0, img:fileImagen} 
+				,function(){	
+					
+				}
+		);
+		
+			
+			},noLocation,{timeout:6000});
+	
+			
+}
 function marcarLugarCom()
 {
 	
@@ -782,14 +849,7 @@ function marcarLugarCom()
 				html: ""
 			});
 			var fileImagen="";
-			if(document.getElementById("camera_image").src!="")
-			{
-				d = new Date();
-				fec=''+d.getFullYear()+''+d.getMonth()+''+d.getDate()+''+d.getHours()+''+d.getMinutes()+''+d.getSeconds()+'';
-				fileImagen=id_lugar+"_"+fec+".jpg";
-				//alert("nom_imagen:: "+fileImagen);
-				uploadPhoteServer(fileImagen);
-			}
+			
 			$("#output").load(path_query, 
 			{tipo:8, id:id_lugar,coment:coment,lat:OBVII_LAT,lon:OBVII_LON,accu:OBVII_ACCU,tipo_marca:0, img:fileImagen} 
 				,function(){	
@@ -802,7 +862,6 @@ function marcarLugarCom()
 	
 			
 }
-
 function deleteLugar(id_lugar)
 {
 	$.mobile.loading( 'show', {
@@ -1045,7 +1104,21 @@ function isImage(extension)
         break;
     }
 }
-
+function loadCheckout(id_lugar)
+{
+	
+	$("#contenido_check").load(path_query, 
+				{tipo:19} 
+					,function(){
+						$('#cont_check').trigger('create');
+						 $( "#t_id_empresa" ).html(id_lugar);		
+							$.mobile.changePage('#m_checkout2', { role: 'dialog'});
+						
+						
+						
+					}
+				);
+}
 
 
  

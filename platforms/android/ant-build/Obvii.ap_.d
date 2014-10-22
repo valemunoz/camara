@@ -30,7 +30,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\ant-build\res\drawable-x
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\_where-is-www.txt \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\config.xml \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\config.xml.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\cordova.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\cordova_plugins.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css \
@@ -40,6 +39,7 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index_ejem.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\libre.html \
@@ -229,8 +229,10 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\ticket
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\logo.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_api_mobile_basica.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd.js \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd.js.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd_old.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\index.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\jquery-1.10.2.min.js \
