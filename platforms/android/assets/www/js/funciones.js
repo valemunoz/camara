@@ -5,7 +5,7 @@ var PAIS_LON=-70.656235;
 var PAIS_LAT=-33.458943;
 var PAIS_ZOOM=10;
 var OBVII_PAIS="chile";
-
+var up_img=false;
 var path_query="http://locate.chilemap.cl/obvii/app/query.php";
 var path_query2="http://locate.chilemap.cl/obvii/app/query_app.php";
 var path_info="http://locate.chilemap.cl/obvii/app/info.php";
@@ -555,12 +555,13 @@ function validaUpLugares(id_lugar)
 }
 function marcar(id_lugar,comenta,marca)
 {
-	if(marca=='f')
+	
+	if(marca=='f' || marca==1)
 	{
 		marcarLugar(id_lugar,comenta);
 	}else
 	{
-		if(comenta=='t')
+		if(comenta=='t' || comenta==0)
 		  comenta=0;
 		else
 			comenta=1;  
@@ -661,16 +662,19 @@ function getImage() {
             options.chunkedMode = false;
 
             var ft = new FileTransfer();
-            ft.upload(imageURI, "http://locate.chilemap.cl/obvii/includes/uploadb.php", win, fail, options);
+            ft.upload(imageURI, "http://locate.chilemap.cl/obvii/includes/uploadb.php", win, fail, options,true);
 				}
         function win(r) {
             //console.log("Code = " + r.responseCode);
             //console.log("Response = " + r.response);
             //console.log("Sent = " + r.bytesSent);
+            $.mobile.loading( 'hide');
             //mensaje("Imagen almacenada",'MENSAJE','myPopup');
+            mensaje("Marcaci&oacute;n realizada",'MENSAJE','myPopup');
         }
 
         function fail(error) {
+        	$.mobile.loading( 'hide');
             mensaje("Imagen no se puede almacenar.",'ALERTA','myPopup');
         }
 
@@ -768,7 +772,7 @@ function marcarLugarComDoc()
   		OBVII_ACCU=accu;
   		
   	  
-			$.mobile.loading( 'hide');
+			//$.mobile.loading( 'hide');
 		
 			var coment=$.trim(document.getElementById("comentario_lug").value);
 			
@@ -776,12 +780,7 @@ function marcarLugarComDoc()
 			
 			
 			
-			$.mobile.loading( 'show', {
-				text: 'Marcando...',
-				textVisible: true,
-				theme: 'a',
-				html: ""
-			});
+			
 			var fileImagen="";
 			fot=document.getElementById("camera_image").src;
 			if(fot.search("index.html")> 1)
@@ -794,11 +793,28 @@ function marcarLugarComDoc()
 				fec=''+d.getFullYear()+''+d.getMonth()+''+d.getDate()+''+d.getHours()+''+d.getMinutes()+''+d.getSeconds()+'';
 				fileImagen=id_lugar+"_"+fec+".jpg";
 				//alert("nom_imagen:: "+fileImagen);
-				uploadPhoteServer(fileImagen);
+				//uploadPhoteServer(fileImagen);
 			}
+			$.mobile.loading( 'show', {
+				text: 'Marcando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
 			$("#output").load(path_query, 
 			{tipo:8, id:id_lugar,coment:coment,lat:OBVII_LAT,lon:OBVII_LON,accu:OBVII_ACCU,tipo_marca:0, img:fileImagen} 
 				,function(){	
+					if(fot !="")
+					{
+						$.mobile.loading( 'show', {
+						text: 'Enviando Imagen...',
+							textVisible: true,
+							theme: 'a',
+							html: ""
+						});
+				
+						uploadPhoteServer(fileImagen);
+					}
 					
 				}
 		);
@@ -993,7 +1009,8 @@ function verMapa()
 					$.mobile.loading( 'hide');
 					init(PAIS_LON,PAIS_LAT,PAIS_ZOOM);
 					//loadCentroMapa();
-					$("#info_pres").html("Para Actualizar su ubicaci&oacute;n actual, haga click aqu&iacute; <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
+					//$("#info_pres").html("Para Actualizar su ubicaci&oacute;n actual, haga click aqu&iacute; <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
+					$('#contenido_sesion').trigger('create');
 					/*if(OBVII_LON!=0)
 					{
 						$("#info_pres").html("Ultima ubicaci&oacute;n registrada con una presici&oacute;n de : "+OBVII_ACCU+"  <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
@@ -1010,6 +1027,7 @@ function verMapa()
 
 function loadCentroMapa()
 {
+	deleteTodos();
 	$.mobile.loading( 'show', {
 				text: 'Obteniendo ubicacion actual',
 				textVisible: true,
@@ -1025,14 +1043,42 @@ function loadCentroMapa()
   		OBVII_LON=lng;
   		OBVII_LAT=lat;
   		OBVII_ACCU=accu;
-			$("#info_pres").html("La precision de su GPS es de "+OBVII_ACCU+". Si desea mejorarla conectese a una red Wi-Fi.  <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
+			$("#info_pres").html("La precision de su GPS es de "+OBVII_ACCU+". Si desea mejorarla conectese a una red Wi-Fi.");
 			moverCentro(OBVII_LAT,OBVII_LON,15);
 			//point5
 			addMarcadores(OBVII_LON,OBVII_LAT,"Ubicaci&oacute;n Actual","images/point.png",40,40);
-			$.mobile.loading( 'hide');
+			$.mobile.loading( 'hide');			
 			},noLocation,{timeout:6000});
 }
-
+function loadEmpresasRadio(lon,lat)
+{
+	if(lon==0 || lat==0)
+	{
+		getLocation();
+		
+		
+	}else
+	{
+			loadDataEmpresa(lon,lat);
+	}			
+}
+function loadDataEmpresa(lon,lat)
+{
+	$.mobile.loading( 'show', {
+				text: 'Buscando lugares cercanos...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+			$("#output").load(path_query2, 
+			{tipo:13,lon:lon,lat:lat} 
+				,function(){	
+					verMarcadores();									
+					$.mobile.loading( 'hide');
+					
+				}
+			);
+}
 function moveOn()
 {
 	var centro =map.getCenter().transform(
@@ -1120,5 +1166,26 @@ function loadCheckout(id_lugar)
 				);
 }
 
+function getLocation()
+{
+	$.mobile.loading( 'show', {
+				text: 'Obteniendo ubicacion actual',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+		navigator.geolocation.getCurrentPosition (function (pos)
+		{
+			var lat = pos.coords.latitude;
+  		var lng = pos.coords.longitude;
+  		var accu=pos.coords.accuracy.toFixed(2);
+  		
+  		OBVII_LON=lng;
+  		OBVII_LAT=lat;
+  		OBVII_ACCU=accu;
+  		loadDataEmpresa(OBVII_LON,OBVII_LAT);
 
+			$.mobile.loading( 'hide');			
+			},noLocation,{timeout:6000});
+}
  

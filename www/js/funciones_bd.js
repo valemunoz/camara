@@ -1333,6 +1333,7 @@ function loadTerminos()
 }
 function mostrarMenu()
 {
+	$("#ll_dip").hide(); 
 	   $("#ll_mapa").show();
   	$("#field_gps").show(); 
 		$("#ll_off").show(); 
@@ -1343,14 +1344,13 @@ function hideMenu()
 {
 	$("#ll_mapa").hide();
 	$("#field_gps").hide(); 
-	$("#ll_off").hide(); 
-	
+	$("#ll_off").hide(); 	
 	$("#ll_dip").hide(); 
 	$("#list_mail_marca").hide(); 
 }
 function procesGPS()
 {
-	$("#mypanel").panel( "close" );
+	
 	$.mobile.loading( 'show', {
 				text: 'Procesando...',
 				textVisible: true,

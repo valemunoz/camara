@@ -208,6 +208,8 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\lista.
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\lista2.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\load.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\loading.png \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\marker_ini.png \
+C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\marker_nav.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\obvii-logo-blue.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\obvii-logo-white.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\point.png \
