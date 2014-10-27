@@ -588,10 +588,11 @@ function addMarcaOff(id_marca_glob,nom_marca_glob,descrip_marca,marcacion)
 					$.mobile.loading( 'hide');
 		  		mensaje("Marcacion realizada localmente",'Mensaje','myPopup');
 				},function (err){
-					$.mobile.loading( 'hide');
-					mensaje(MSG_NO_GPS,'ERROR','myPopup');
+					//$.mobile.loading( 'hide');
+					//mensaje(MSG_NO_GPS,'ERROR','myPopup');
+					
 					//alert(DEVICE_ONLINE);
-					/*
+					
 	  			if(!DEVICE_ONLINE)
 	  			{
 	  				$.mobile.loading( 'show', {
@@ -647,13 +648,13 @@ function addMarcaOff(id_marca_glob,nom_marca_glob,descrip_marca,marcacion)
       		
 					}, errorCB, successCB);
 					$.mobile.loading( 'hide');
-		  		mensaje("Marcacion realizada localmente",'Mensaje','myPopup');
+		  		mensaje("Marcacion realizada localmente.",'Mensaje','myPopup');
 	  		}else
 	  		{
 					mensaje("Se produjo un error en la lectura de su posici&oacute;n.<br>Esto se puede suceder al no darle permisos al sistema para obtener su ubicacion actual o bien no tiene disponible GPS en el equipo.<br>Por favor revise su configuracion e intentelo nuevamente",'ERROR','myPopup');
 				}
-					*/
-					},{timeout:6000});
+					
+					},{timeout:10000});
 	
 }
 function noLocationOff(error)
@@ -1129,7 +1130,7 @@ function validaMarcacionOff()
 					}, errorCB, successCB);
 					$.mobile.loading( 'hide');
 		  		mensaje("Marcacion realizada localmente",'Mensaje','myPopup');*/
-				},{timeout:6000});
+				},{timeout:10000});
 		
 		
 		
@@ -1338,6 +1339,7 @@ function mostrarMenu()
   	$("#field_gps").show(); 
 		$("#ll_off").show(); 
 		$("#ll_cerrar").show(); 	
+		$("#ll_fecsis").show(); 
 		$("#list_mail_marca").show(); 
 }
 function hideMenu()
@@ -1346,6 +1348,8 @@ function hideMenu()
 	$("#field_gps").hide(); 
 	$("#ll_off").hide(); 	
 	$("#ll_dip").hide(); 
+	$("#ll_dip").hide(); 
+	$("#ll_fecsis").hide(); 
 	$("#list_mail_marca").hide(); 
 }
 function procesGPS()
@@ -1371,6 +1375,25 @@ function procesGPS()
 	
 	$("#output").load(path_query2, 
 			{tipo:12,gps:gps} 
+				,function(){	
+									
+					$.mobile.loading( 'hide');
+					
+				}
+			);
+	
+}
+
+function getHoraServer()
+{
+	$.mobile.loading( 'show', {
+				text: 'Procesando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+	$("#output").load(path_query2, 
+			{tipo:14} 
 				,function(){	
 									
 					$.mobile.loading( 'hide');
