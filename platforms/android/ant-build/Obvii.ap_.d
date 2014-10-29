@@ -39,8 +39,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index.html.bak \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\index_ejem.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\libre.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\lugares.html \
@@ -231,10 +229,8 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\images\ticket
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\icon.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\img\logo.png \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones.js.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_api_mobile_basica.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd.js \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd.js.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\funciones_bd_old.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\index.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\js\jquery-1.10.2.min.js \

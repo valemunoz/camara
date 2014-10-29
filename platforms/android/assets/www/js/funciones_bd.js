@@ -648,7 +648,7 @@ function addMarcaOff(id_marca_glob,nom_marca_glob,descrip_marca,marcacion)
       		
 					}, errorCB, successCB);
 					$.mobile.loading( 'hide');
-		  		mensaje("Marcacion realizada localmente opc ultima coord",'Mensaje','myPopup');
+		  		mensaje("Marcacion realizada localmente.",'Mensaje','myPopup');
 	  		}else
 	  		{
 					mensaje("Se produjo un error en la lectura de su posici&oacute;n.<br>Esto se puede suceder al no darle permisos al sistema para obtener su ubicacion actual o bien no tiene disponible GPS en el equipo.<br>Por favor revise su configuracion e intentelo nuevamente",'ERROR','myPopup');
