@@ -991,7 +991,7 @@ function sendLitsaMail(id_lug,id_base)
 				}
 		);
 }
-function verMapa()
+function verMapa(ll_lon,ll_lat,ll_txt)
 {
 	//cambiar("mod_mapa");
 	$("#mypanel").panel( "close" );
@@ -1007,10 +1007,17 @@ function verMapa()
 				,function(){	
 					
 					$.mobile.loading( 'hide');
+					
 					init(PAIS_LON,PAIS_LAT,PAIS_ZOOM);
 					//loadCentroMapa();
 					//$("#info_pres").html("Para Actualizar su ubicaci&oacute;n actual, haga click aqu&iacute; <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
 					$('#contenido_sesion').trigger('create');
+					if(ll_lon!=0 && ll_lat!=0)
+					{
+						moverCentro(ll_lat,ll_lon,15);
+						addMarcadores(ll_lon,ll_lat,""+ll_txt+"","images/marker_nav.png",30,30);
+						
+					}
 					/*if(OBVII_LON!=0)
 					{
 						$("#info_pres").html("Ultima ubicaci&oacute;n registrada con una presici&oacute;n de : "+OBVII_ACCU+"  <img onclick='loadCentroMapa();' src='images/current.png' class=curretn>");
