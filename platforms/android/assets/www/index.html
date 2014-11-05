@@ -46,8 +46,10 @@ document.addEventListener("deviceready", deviceListo, false);
 			  	  </div>
 			  	  <fieldset data-role="controlgroup" id="field_gps">
     				<legend>Opciones del Sistema:</legend>
+    				
     					<input type="checkbox" name="checkbox-2a" id="checkbox-2a" onchange="procesGPS();">
     					<label for="checkbox-2a">GPS</label>
+    					
    
 						</fieldset>
 			  	   <div data-role="collapsible" id='list_mail_marca'>
@@ -239,9 +241,10 @@ document.addEventListener("deviceready", deviceListo, false);
 					</div>
 					<p id="form_login">
 						
-						<input type="text" class=input_form name="nom_reg" id="nom_reg" value="" placeholder="Nombre Usuario">						
-						<input type="text" class=input_form name="emp_reg" id="emp_reg" value="" placeholder="Nombre Empresa">		
+						<input type="text" class=input_form name="nom_reg" id="nom_reg" value="" placeholder="Nombre">
 						<input type="text" class=input_form name="mail_reg" id="mail_reg" value="" placeholder="Correo Electronico">
+						<input type="text" class=input_form name="emp_reg" id="emp_reg" value="" placeholder="Nombre Empresa">
+												<input type="text" class=input_form name="mail_emp" id="mail_emp" value="" placeholder="Correo Empresa">
 						<input type="password" class=input_form name="clave_reg" id="clave_reg"  autocomplete="off" placeholder="Contrase&ntilde;a">
 						<input type="password" class=input_form name="clave_re_reg" id="clave_re_reg"  autocomplete="off" placeholder="Repite Contrase&ntilde;a">
 						<p>

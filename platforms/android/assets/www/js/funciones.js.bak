@@ -345,6 +345,8 @@ function addUsuario()
 function RecClave()
 {
 	
+if(DEVICE_ONLINE)
+{
 	var mail=$.trim(document.getElementById("mail_rec").value);
 	var valida=true;
 	if(mail =="")
@@ -375,6 +377,11 @@ function RecClave()
 	{
 		
 			mensaje(msg,'ERROR','myPopup_rec');
+	}
+}else
+	{
+		
+			setTimeout("mensaje(MSG_NO_INTERNET,'Alerta','myPopup_rec');",500);
 	}
 }
 function validaMarcacion()
@@ -991,7 +998,7 @@ function sendLitsaMail(id_lug,id_base)
 				}
 		);
 }
-function verMapa(ll_lon,ll_lat)
+function verMapa(ll_lon,ll_lat,ll_txt)
 {
 	//cambiar("mod_mapa");
 	$("#mypanel").panel( "close" );
@@ -1015,7 +1022,7 @@ function verMapa(ll_lon,ll_lat)
 					if(ll_lon!=0 && ll_lat!=0)
 					{
 						moverCentro(ll_lat,ll_lon,15);
-						addMarcadores(ll_lon,ll_lat,"","images/marker_nav.png",30,30);
+						addMarcadores(ll_lon,ll_lat,""+ll_txt+"","images/marker_nav.png",30,30);
 						
 					}
 					/*if(OBVII_LON!=0)

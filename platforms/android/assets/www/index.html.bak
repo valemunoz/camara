@@ -46,8 +46,23 @@ document.addEventListener("deviceready", deviceListo, false);
 			  	  </div>
 			  	  <fieldset data-role="controlgroup" id="field_gps">
     				<legend>Opciones del Sistema:</legend>
+    				<?php
+    				if(!$_SESSION["demo_us"])
+    				{
+    				?>
     					<input type="checkbox" name="checkbox-2a" id="checkbox-2a" onchange="procesGPS();">
     					<label for="checkbox-2a">GPS</label>
+    				<?php
+    				}else
+    				{
+    					?>
+    					<input type="checkbox" name="checkbox-4a" id="checkbox-4a" onclick="errorMapa('<?=MSG_DEMO?>');">
+    					<label for="checkbox-4a">GPS</label>
+    				<?php
+    					
+    				}
+    				?>
+    					
    
 						</fieldset>
 			  	   <div data-role="collapsible" id='list_mail_marca'>
@@ -88,7 +103,7 @@ document.addEventListener("deviceready", deviceListo, false);
 					<p id="form_interior">
 						<span class=titulo_interior>Asistencia Remota</span>
 						<br><br>
-						<span class=texto_interior>Te permite registrar asistencia en cualquier lugar .</span>
+						<span class=texto_interior>Te permite registrar asistencia en terreno.</span>
 						<br><br>
 						<input type="button" onclick="inicio_ses();" value="Inicio Sesi&oacute;n">
 						
@@ -239,9 +254,10 @@ document.addEventListener("deviceready", deviceListo, false);
 					</div>
 					<p id="form_login">
 						
-						<input type="text" class=input_form name="nom_reg" id="nom_reg" value="" placeholder="Nombre Usuario">						
-						<input type="text" class=input_form name="emp_reg" id="emp_reg" value="" placeholder="Nombre Empresa">		
+						<input type="text" class=input_form name="nom_reg" id="nom_reg" value="" placeholder="Nombre">
 						<input type="text" class=input_form name="mail_reg" id="mail_reg" value="" placeholder="Correo Electronico">
+						<input type="text" class=input_form name="emp_reg" id="emp_reg" value="" placeholder="Nombre Empresa">
+												<input type="text" class=input_form name="mail_emp" id="mail_emp" value="" placeholder="Correo Empresa">
 						<input type="password" class=input_form name="clave_reg" id="clave_reg"  autocomplete="off" placeholder="Contrase&ntilde;a">
 						<input type="password" class=input_form name="clave_re_reg" id="clave_re_reg"  autocomplete="off" placeholder="Repite Contrase&ntilde;a">
 						<p>

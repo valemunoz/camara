@@ -345,6 +345,8 @@ function addUsuario()
 function RecClave()
 {
 	
+if(DEVICE_ONLINE)
+{
 	var mail=$.trim(document.getElementById("mail_rec").value);
 	var valida=true;
 	if(mail =="")
@@ -374,7 +376,13 @@ function RecClave()
 	}else
 	{
 		
-			mensaje(msg,'ERROR','myPopup_rec');
+			
+			setTimeout("mensaje(msg,'ERROR','myPopup_rec');",500);
+	}
+}else
+	{
+		
+			setTimeout("mensaje(MSG_NO_INTERNET,'Alerta','myPopup_rec');",500);
 	}
 }
 function validaMarcacion()

@@ -305,7 +305,7 @@
 	height:40px !important;
 	font-size:13px;		
 	font-weight:bold;	
-	
-	color:#4E4E4E;
+	background-color:#0091E4;
+	color:#EAEAEA;
 	
 }

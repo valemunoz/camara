@@ -231,6 +231,8 @@ function loadInicioOff()
 	}else
 	{
 		$.mobile.loading( 'hide');
+		
+		$("#bienvenido_div").html("");		
 		inicio_ses();
 			
 		//cambiar("mod_sesion");
@@ -1239,6 +1241,8 @@ function sendDevice()
 
 function registrarDemo()
 {
+	if(DEVICE_ONLINE)
+	{
 	if(uuid_user==0)
 	{
 		uuid_user = device.uuid;
@@ -1246,6 +1250,7 @@ function registrarDemo()
 	var nombre=$.trim(document.getElementById("nom_reg").value);
 	var empresa=$.trim(document.getElementById("emp_reg").value);
 	var mail=$.trim(document.getElementById("mail_reg").value);
+	var mail_emp=$.trim(document.getElementById("mail_emp").value);
 	var clave=$.trim(document.getElementById("clave_reg").value);
 	var re_clave=$.trim(document.getElementById("clave_re_reg").value);
 	
@@ -1263,6 +1268,11 @@ function registrarDemo()
 	  valida=false;
 	}
 	if(!validarEmail(mail))
+	{
+		msg +=MSG_NO_MAIL;
+		valida=false;
+	}
+	if(!validarEmail(mail_emp))
 	{
 		msg +=MSG_NO_MAIL;
 		valida=false;
@@ -1306,14 +1316,19 @@ function registrarDemo()
 			
 
 			$("#output").load(path_query2, 
-			{tipo:10, nombre:nombre,clave:clave,empresa:empresa,mail:mail,device:uuid_user} 
+			{tipo:10, nombre:nombre,clave:clave,empresa:empresa,mail:mail,device:uuid_user,mail_emp:mail_emp} 
 				,function(){	
 					$.mobile.loading( 'hide');
 					
 				}
 			);
 		}
-	
+	}else
+		{
+			
+			$("#mod_registro").dialog( "close" );
+			setTimeout("mensaje(MSG_NO_INTERNET,'Alerta','myPopup');",500);
+		}
 }
 
 function openRegistro()
@@ -1354,6 +1369,13 @@ function hideMenu()
 }
 function procesGPS()
 {
+	if(USER_DEMO)
+	{
+		$("#mypanel").panel( "close" );
+		setTimeout("mensaje('"+MSG_DEMO+"','Alertas','myPopup');",300);
+		
+	}else
+		{
 	
 	$.mobile.loading( 'show', {
 				text: 'Procesando...',
@@ -1381,7 +1403,7 @@ function procesGPS()
 					
 				}
 			);
-	
+	}
 }
 
 function getHoraServer()
@@ -1400,5 +1422,11 @@ function getHoraServer()
 					
 				}
 			);
+	
+}
+
+function errorMapa(txt_demo)
+{
+	mensaje(txt_demo,'Alertas','myPopup');
 	
 }
