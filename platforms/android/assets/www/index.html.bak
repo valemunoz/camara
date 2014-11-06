@@ -24,6 +24,14 @@
 document.addEventListener("offline", onready, false);
 document.addEventListener("online", onready, false);
 document.addEventListener("deviceready", deviceListo, false);
+$(function(){
+$('#mappage').live("swipeleft", function(){
+	alert("paso");
+	//$.mobile.changePage("#mod_registro", "slide", false, true);
+
+});
+});
+
 //document.addEventListener("pause", resumeFunc, false);
 </script>
     </head>
@@ -46,22 +54,9 @@ document.addEventListener("deviceready", deviceListo, false);
 			  	  </div>
 			  	  <fieldset data-role="controlgroup" id="field_gps">
     				<legend>Opciones del Sistema:</legend>
-    				<?php
-    				if(!$_SESSION["demo_us"])
-    				{
-    				?>
+    				
     					<input type="checkbox" name="checkbox-2a" id="checkbox-2a" onchange="procesGPS();">
     					<label for="checkbox-2a">GPS</label>
-    				<?php
-    				}else
-    				{
-    					?>
-    					<input type="checkbox" name="checkbox-4a" id="checkbox-4a" onclick="errorMapa('<?=MSG_DEMO?>');">
-    					<label for="checkbox-4a">GPS</label>
-    				<?php
-    					
-    				}
-    				?>
     					
    
 						</fieldset>

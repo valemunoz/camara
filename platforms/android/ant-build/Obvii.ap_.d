@@ -48,7 +48,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\phonegap.js \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\plugins \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\res \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\sesion.html \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\sesion.html.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\spec \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\spec.html \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\splash.png \
@@ -59,7 +58,6 @@ C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\index.css
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\jquery.mobile-1.3.2.min.css \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\jquery.mobile.structure-1.4.0-rc.1.min.css \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\style.css \
-C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\style.css.bak \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\style.mobile-jq.css \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\style.mobile.css \
 C:\ms4w\Apache\htdocs\phonegap\camara\platforms\android\assets\www\css\style_mob.css \
