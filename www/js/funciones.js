@@ -206,6 +206,10 @@ function loadEditar(id_lugar)
 }
 function loadHome()
 {
+	//$("#li_home").addClass("ui-btn-active");
+	
+	nexswip=2;
+	prevswip=1;
 	$.mobile.loading( 'show', {
 			text: 'Cargando Lugares...',
 			textVisible: true,
@@ -217,6 +221,8 @@ function loadHome()
 				,function(){	
 					$.mobile.loading( 'hide');
 					$('#contenido_sesion').trigger('create');
+					
+	
 				}
 		);
 }
@@ -238,6 +244,8 @@ function loadAsis()
 }
 function loadFav()
 {
+	nexswip=1;
+	prevswip=0;
 	$.mobile.loading( 'show', {
 			text: 'Cargando Favoritos...',
 			textVisible: true,
@@ -254,6 +262,8 @@ function loadFav()
 }
 function loadHistorial()
 {
+		nexswip=3;
+	prevswip=2;
 	$.mobile.loading( 'show', {
 			text: '...',
 			textVisible: true,
@@ -270,6 +280,8 @@ function loadHistorial()
 }
 function loadInfo()
 {
+		nexswip=4;
+	prevswip=3;
 	$.mobile.loading( 'show', {
 			text: '...',
 			textVisible: true,

@@ -38,8 +38,66 @@ var watchLon=0;
 var watchLat=0;
 var watchEstado=false;
 var watchID;
+var prevswip=0;
+var nexswip=6;
+$(document).on('pageinit', function(event){
+	$('div.ui-page').on("swipeleft",function(){
+		
+		if(nexswip < 5)
+		{
+			nexswip++;
+			if(nexswip==2 && DEVICE_ONLINE)
+			{
+				loadHome();
+				prevswip=nexswip-1;
+			}
+			if(nexswip==3 && DEVICE_ONLINE)
+			{
+				loadHistorial();
+				prevswip=nexswip-1;
+			}
+			if(nexswip==4 && DEVICE_ONLINE)
+			{				
+				loadInfo();
+				prevswip=nexswip-1;
+			}
+		}
+	
+
+});
+
+$('div.ui-page').on("swiperight",function(){
+
+
+			if(prevswip==1 && DEVICE_ONLINE)
+			{
+				loadFav();
+				
+				nexswip=prevswip;
+				prevswip=0;
+			}
+			if(prevswip==2 && DEVICE_ONLINE)
+			{
+				loadHome();
+				nexswip=prevswip;
+				prevswip=1;
+			}
+			if(prevswip==3 && DEVICE_ONLINE)
+			{
+			
+			loadHistorial();	
+			
+				nexswip=prevswip;
+				prevswip=2;
+			}
+			
+
+
+});
+});
 
 $(function(){
+	
   setInterval(function(){  
   	
 					d = new Date();
@@ -168,10 +226,14 @@ function onready()
 	if(navigator.connection.type == Connection.NONE)
  	{
  		onOffline();
+ 		prevswip=0;
+		nexswip=5;
  		
  	}else
  	{
  		onOnline();
+ 		prevswip=0;
+		nexswip=1;
  		
 	}
   onready2();
