@@ -105,7 +105,7 @@
 }
 .titulo_pop2
 {
-	font-size:12px;		
+	font-size:10px;		
 	font-weight:normal;	
 	margin-left:5px;
 	color:#4E4E4E;
@@ -307,5 +307,14 @@
 	font-weight:bold;	
 	background-color:#0091E4;
 	color:#EAEAEA;
+	
+}
+.boton_pop2
+{
+	width:160px !important;
+	height:40px !important;
+	font-size:16px;		
+	background-color:#EAEAEA;
+	color:#0091E4;
 	
 }

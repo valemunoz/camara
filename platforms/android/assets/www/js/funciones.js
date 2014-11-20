@@ -815,6 +815,7 @@ function marcarLugarComDoc()
 				//alert("nom_imagen:: "+fileImagen);
 				//uploadPhoteServer(fileImagen);
 			}
+			$.mobile.loading( 'hide');
 			$.mobile.loading( 'show', {
 				text: 'Marcando...',
 				textVisible: true,
@@ -826,6 +827,8 @@ function marcarLugarComDoc()
 				,function(){	
 					if(fot !="")
 					{
+						alert("paso");
+						$.mobile.loading( 'hide');
 						$.mobile.loading( 'show', {
 						text: 'Enviando Imagen...',
 							textVisible: true,
@@ -1071,10 +1074,18 @@ function loadCentroMapa()
   		OBVII_LAT=lat;
   		OBVII_ACCU=accu;
 			$("#info_pres").html("La precision de su GPS es de "+OBVII_ACCU+". Si desea mejorarla conectese a una red Wi-Fi.");
-			moverCentro(OBVII_LAT,OBVII_LON,15);
-			//point5
-			addMarcadores(OBVII_LON,OBVII_LAT,"Ubicaci&oacute;n Actual","images/point.png",40,40);
-			$.mobile.loading( 'hide');			
+			$("#output").load(path_query2, 
+			{tipo:15,lon:lng,lat:lat} 
+				,function(){	
+					moverCentro(OBVII_LAT,OBVII_LON,15);
+					//point5		
+											
+					$.mobile.loading( 'hide');
+					
+				}
+			);
+			
+					
 			},noLocation,{timeout:6000});
 }
 function loadEmpresasRadio(lon,lat)

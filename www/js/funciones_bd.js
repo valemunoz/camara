@@ -1492,3 +1492,33 @@ function errorMapa(txt_demo)
 	mensaje(txt_demo,'Alertas','myPopup');
 	
 }
+
+function enviarMailPop()
+{
+	mail_pop=$.trim(document.getElementById("mail_pop").value);
+	if(validarEmail(mail_pop))
+	{
+		
+		$.mobile.loading( 'show', {
+				text: 'Enviando...',
+				textVisible: true,
+				theme: 'a',
+				html: ""
+			});
+		$("#output").load(path_query2, 
+			{tipo:15, mail:mail_pop} 
+				,function(){	
+									
+					$.mobile.loading( 'hide');
+					mensaje("Ubicaci&oacute;n Enviada",'Mensaje','myPopup');
+					
+				}
+			);
+	}else
+		{
+			mensaje(MSG_NO_MAIL,'Error','myPopup');
+			
+		}
+	
+	
+}
